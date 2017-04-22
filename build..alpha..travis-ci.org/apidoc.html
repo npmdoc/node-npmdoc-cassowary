@@ -1,0 +1,1163 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/slightlyoff/cassowary-js-refactor#readme"
+
+    >cassowary (v0.0.2)</a>
+</h1>
+<h4>A fast, modern JavaScript version of the Cassowary hierarchial linear constraint solver</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.cassowary">module cassowary</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cassowary.</span>GC</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cassowary.</span>debug</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cassowary.</span>trace</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cassowary.</span>traceAdded</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">cassowary.</span>verbose</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.AbstractConstraint">
+            function <span class="apidocSignatureSpan">cassowary.</span>AbstractConstraint
+            <span class="apidocSignatureSpan">(b, c)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.AbstractVariable">
+            function <span class="apidocSignatureSpan">cassowary.</span>AbstractVariable
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.Constraint">
+            function <span class="apidocSignatureSpan">cassowary.</span>Constraint
+            <span class="apidocSignatureSpan">(b, c, d)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.ConstraintNotFound">
+            function <span class="apidocSignatureSpan">cassowary.</span>ConstraintNotFound
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.DummyVariable">
+            function <span class="apidocSignatureSpan">cassowary.</span>DummyVariable
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.EditConstraint">
+            function <span class="apidocSignatureSpan">cassowary.</span>EditConstraint
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.EditInfo">
+            function <span class="apidocSignatureSpan">cassowary.</span>EditInfo
+            <span class="apidocSignatureSpan">(a, b, c, d, e)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.Equation">
+            function <span class="apidocSignatureSpan">cassowary.</span>Equation
+            <span class="apidocSignatureSpan">(b, c, e, f)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.Error">
+            function <span class="apidocSignatureSpan">cassowary.</span>Error
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.Expression">
+            function <span class="apidocSignatureSpan">cassowary.</span>Expression
+            <span class="apidocSignatureSpan">(b, c, d)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.HashSet">
+            function <span class="apidocSignatureSpan">cassowary.</span>HashSet
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.HashTable">
+            function <span class="apidocSignatureSpan">cassowary.</span>HashTable
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.Inequality">
+            function <span class="apidocSignatureSpan">cassowary.</span>Inequality
+            <span class="apidocSignatureSpan">(b, c, e, f, g)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.InternalError">
+            function <span class="apidocSignatureSpan">cassowary.</span>InternalError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.NonExpression">
+            function <span class="apidocSignatureSpan">cassowary.</span>NonExpression
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.NotEnoughStays">
+            function <span class="apidocSignatureSpan">cassowary.</span>NotEnoughStays
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.ObjectiveVariable">
+            function <span class="apidocSignatureSpan">cassowary.</span>ObjectiveVariable
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.Point">
+            function <span class="apidocSignatureSpan">cassowary.</span>Point
+            <span class="apidocSignatureSpan">(b, c, d)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.RequiredFailure">
+            function <span class="apidocSignatureSpan">cassowary.</span>RequiredFailure
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.SimplexSolver">
+            function <span class="apidocSignatureSpan">cassowary.</span>SimplexSolver
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.SlackVariable">
+            function <span class="apidocSignatureSpan">cassowary.</span>SlackVariable
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.StayConstraint">
+            function <span class="apidocSignatureSpan">cassowary.</span>StayConstraint
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.Strength">
+            function <span class="apidocSignatureSpan">cassowary.</span>Strength
+            <span class="apidocSignatureSpan">(b, c, d, e)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.SymbolicWeight">
+            function <span class="apidocSignatureSpan">cassowary.</span>SymbolicWeight
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.Tableau">
+            function <span class="apidocSignatureSpan">cassowary.</span>Tableau
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.Timer">
+            function <span class="apidocSignatureSpan">cassowary.</span>Timer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.TooDifficult">
+            function <span class="apidocSignatureSpan">cassowary.</span>TooDifficult
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.Variable">
+            function <span class="apidocSignatureSpan">cassowary.</span>Variable
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary._inc">
+            function <span class="apidocSignatureSpan">cassowary.</span>_inc
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.approx">
+            function <span class="apidocSignatureSpan">cassowary.</span>approx
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.assert">
+            function <span class="apidocSignatureSpan">cassowary.</span>assert
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.divide">
+            function <span class="apidocSignatureSpan">cassowary.</span>divide
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.extend">
+            function <span class="apidocSignatureSpan">cassowary.</span>extend
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.fnenterprint">
+            function <span class="apidocSignatureSpan">cassowary.</span>fnenterprint
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.fnexitprint">
+            function <span class="apidocSignatureSpan">cassowary.</span>fnexitprint
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.inherit">
+            function <span class="apidocSignatureSpan">cassowary.</span>inherit
+            <span class="apidocSignatureSpan">(b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.minus">
+            function <span class="apidocSignatureSpan">cassowary.</span>minus
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.own">
+            function <span class="apidocSignatureSpan">cassowary.</span>own
+            <span class="apidocSignatureSpan">(b, c, d)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.parseJSON">
+            function <span class="apidocSignatureSpan">cassowary.</span>parseJSON
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.plus">
+            function <span class="apidocSignatureSpan">cassowary.</span>plus
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.times">
+            function <span class="apidocSignatureSpan">cassowary.</span>times
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.cassowary.traceprint">
+            function <span class="apidocSignatureSpan">cassowary.</span>traceprint
+            <span class="apidocSignatureSpan">(a)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">cassowary.</span>GEQ</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">cassowary.</span>LEQ</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.cassowary" id="apidoc.module.cassowary">module cassowary</a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.AbstractConstraint" id="apidoc.element.cassowary.AbstractConstraint">
+        function <span class="apidocSignatureSpan">cassowary.</span>AbstractConstraint
+        <span class="apidocSignatureSpan">(b, c)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">AbstractConstraint = function (b, c){this.hashCode=a._inc(),this.strength=b||a.Strength.required,this.weight=c||1}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.AbstractVariable" id="apidoc.element.cassowary.AbstractVariable">
+        function <span class="apidocSignatureSpan">cassowary.</span>AbstractVariable
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">AbstractVariable = function (){}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.Constraint" id="apidoc.element.cassowary.Constraint">
+        function <span class="apidocSignatureSpan">cassowary.</span>Constraint
+        <span class="apidocSignatureSpan">(b, c, d)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Constraint = function (b, c, d){a.AbstractConstraint.call(this,c,d),this.expression=b}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.ConstraintNotFound" id="apidoc.element.cassowary.ConstraintNotFound">
+        function <span class="apidocSignatureSpan">cassowary.</span>ConstraintNotFound
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ConstraintNotFound = function (){a.Error.apply(this,arguments)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.DummyVariable" id="apidoc.element.cassowary.DummyVariable">
+        function <span class="apidocSignatureSpan">cassowary.</span>DummyVariable
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">DummyVariable = function (a){this._init(a,&#x22;d&#x22;)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.EditConstraint" id="apidoc.element.cassowary.EditConstraint">
+        function <span class="apidocSignatureSpan">cassowary.</span>EditConstraint
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">EditConstraint = function (){c.apply(this,arguments)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.EditInfo" id="apidoc.element.cassowary.EditInfo">
+        function <span class="apidocSignatureSpan">cassowary.</span>EditInfo
+        <span class="apidocSignatureSpan">(a, b, c, d, e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">EditInfo = function (a, b, c, d, e){this.constraint=a,this.editPlus=b,this.editMinus=c,this.prevEditConstant=d,this.index=e}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.Equation" id="apidoc.element.cassowary.Equation">
+        function <span class="apidocSignatureSpan">cassowary.</span>Equation
+        <span class="apidocSignatureSpan">(b, c, e, f)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Equation = function (b, c, e, f){if(b instanceof a.Expression&#x26;&#x26;!c||c instanceof a.Strength)d.call(this,b,c,e);else if(b instanceof a.AbstractVariable
+&#x26;&#x26;c instanceof a.Expression){var g=b,h=c,i=e,j=f;d.call(this,h.clone(),i,j),this.expression.addVariable(g,-1)}else if(b instanceof
+ a.AbstractVariable&#x26;&#x26;&#x22;number&#x22;==typeof c){var g=b,k=c,i=e,j=f;d.call(this,new a.Expression(k),i,j),this.expression.addVariable(g,-
+1)}else if(b instanceof a.Expression&#x26;&#x26;c instanceof a.AbstractVariable){var h=b,g=c,i=e,j=f;d.call(this,h.clone(),i,j),this.expression
+.addVariable(g,-1)}else{if(!(b instanceof a.Expression||b instanceof a.AbstractVariable||&#x22;number&#x22;==typeof b)||!(c instanceof a.Expression
+||c instanceof a.AbstractVariable||&#x22;number&#x22;==typeof c))throw&#x22;Bad initializer to c.Equation&#x22;;b=b instanceof a.Expression?b.clone():
+new a.Expression(b),c=c instanceof a.Expression?c.clone():new a.Expression(c),d.call(this,b,e,f),this.expression.addExpression(c
+,-1)}a.assert(this.strength instanceof a.Strength,&#x22;_strength not set&#x22;)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+// The entire API is exported by the cassowary object
+var c = require(&#x22;cassowary&#x22;);
+
+var solver = new c.SimplexSolver();
+var x = new c.Variable({ value: 167 });
+var y = new c.Variable({ value: 2 });
+var eq = new c.<span class="apidocCodeKeywordSpan">Equation</span>(x, new c.Expression(y));
+solver.addConstraint(eq);
+// ...
+```
+
+The current low (sub 0.1) version number reflects the instability of the API.
+Also, note that the NPM pacakage includes no tests or demos. For those, clone
+the github repo.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.Error" id="apidoc.element.cassowary.Error">
+        function <span class="apidocSignatureSpan">cassowary.</span>Error
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Error = function (a){a&#x26;&#x26;(this._description=a)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.Expression" id="apidoc.element.cassowary.Expression">
+        function <span class="apidocSignatureSpan">cassowary.</span>Expression
+        <span class="apidocSignatureSpan">(b, c, d)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Expression = function (b, c, d){a.GC&#x26;&#x26;console.log(&#x22;new c.Expression&#x22;),this.constant=&#x22;number&#x22;!=typeof d||isNaN(d)?0:d,this.terms=new a.HashTable
+,b instanceof a.AbstractVariable?this.setVariable(b,&#x22;number&#x22;==typeof c?c:1):&#x22;number&#x22;==typeof b&#x26;&#x26;(isNaN(b)?console.trace():this.constant
+=b)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+// The entire API is exported by the cassowary object
+var c = require(&#x22;cassowary&#x22;);
+
+var solver = new c.SimplexSolver();
+var x = new c.Variable({ value: 167 });
+var y = new c.Variable({ value: 2 });
+var eq = new c.Equation(x, new c.<span class="apidocCodeKeywordSpan">Expression</span>(y));
+solver.addConstraint(eq);
+// ...
+```
+
+The current low (sub 0.1) version number reflects the instability of the API.
+Also, note that the NPM pacakage includes no tests or demos. For those, clone
+the github repo.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.HashSet" id="apidoc.element.cassowary.HashSet">
+        function <span class="apidocSignatureSpan">cassowary.</span>HashSet
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">HashSet = function (){this.storage=[],this.size=0}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.HashTable" id="apidoc.element.cassowary.HashTable">
+        function <span class="apidocSignatureSpan">cassowary.</span>HashTable
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">HashTable = function (){this.size=0,this._store={},this._keyStrMap={},this._deleted=0}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.Inequality" id="apidoc.element.cassowary.Inequality">
+        function <span class="apidocSignatureSpan">cassowary.</span>Inequality
+        <span class="apidocSignatureSpan">(b, c, e, f, g)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Inequality = function (b, c, e, f, g){var h=b instanceof a.Expression,i=e instanceof a.Expression,j=b instanceof a.AbstractVariable,k=e instanceof
+ a.AbstractVariable,l=&#x22;number&#x22;==typeof b,m=&#x22;number&#x22;==typeof e;if((h||l)&#x26;&#x26;k){var n=b,o=c,p=e,q=f,r=g;if(d.call(this,this._cloneOrNewCle
+(n),q,r),o==a.LEQ)this.expression.multiplyMe(-1),this.expression.addVariable(p);else{if(o!=a.GEQ)throw new a.InternalError(&#x22;Invalid
+ operator in c.Inequality constructor&#x22;);this.expression.addVariable(p,-1)}}else if(j&#x26;&#x26;(i||m)){var n=e,o=c,p=b,q=f,r=g;if(d.call(
+this,this._cloneOrNewCle(n),q,r),o==a.GEQ)this.expression.multiplyMe(-1),this.expression.addVariable(p);else{if(o!=a.LEQ)throw new
+ a.InternalError(&#x22;Invalid operator in c.Inequality constructor&#x22;);this.expression.addVariable(p,-1)}}else{if(h&#x26;&#x26;m){var s=b,o=c,t=
+e,q=f,r=g;if(d.call(this,this._cloneOrNewCle(s),q,r),o==a.LEQ)this.expression.multiplyMe(-1),this.expression.addExpression(this.
+_cloneOrNewCle(t));else{if(o!=a.GEQ)throw new a.InternalError(&#x22;Invalid operator in c.Inequality constructor&#x22;);this.expression.addExpression
+(this._cloneOrNewCle(t),-1)}return this}if(l&#x26;&#x26;i){var s=e,o=c,t=b,q=f,r=g;if(d.call(this,this._cloneOrNewCle(s),q,r),o==a.GEQ)this
+.expression.multiplyMe(-1),this.expression.addExpression(this._cloneOrNewCle(t));else{if(o!=a.LEQ)throw new a.InternalError(&#x22;Invalid
+ operator in c.Inequality constructor&#x22;);this.expression.addExpression(this._cloneOrNewCle(t),-1)}return this}if(h&#x26;&#x26;i){var s=b,o=
+c,t=e,q=f,r=g;if(d.call(this,this._cloneOrNewCle(t),q,r),o==a.GEQ)this.expression.multiplyMe(-1),this.expression.addExpression(this
+._cloneOrNewCle(s));else{if(o!=a.LEQ)throw new a.InternalError(&#x22;Invalid operator in c.Inequality constructor&#x22;);this.expression.addExpression
+(this._cloneOrNewCle(s),-1)}}else{if(h)return d.call(this,b,c,e);if(c==a.GEQ)d.call(this,new a.Expression(e),f,g),this.expression
+.multiplyMe(-1),this.expression.addVariable(b);else{if(c!=a.LEQ)throw new a.InternalError(&#x22;Invalid operator in c.Inequality constructor
+&#x22;);d.call(this,new a.Expression(e),f,g),this.expression.addVariable(b,-1)}}}}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.InternalError" id="apidoc.element.cassowary.InternalError">
+        function <span class="apidocSignatureSpan">cassowary.</span>InternalError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">InternalError = function (){a.Error.apply(this,arguments)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.NonExpression" id="apidoc.element.cassowary.NonExpression">
+        function <span class="apidocSignatureSpan">cassowary.</span>NonExpression
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">NonExpression = function (){a.Error.apply(this,arguments)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.NotEnoughStays" id="apidoc.element.cassowary.NotEnoughStays">
+        function <span class="apidocSignatureSpan">cassowary.</span>NotEnoughStays
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">NotEnoughStays = function (){a.Error.apply(this,arguments)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.ObjectiveVariable" id="apidoc.element.cassowary.ObjectiveVariable">
+        function <span class="apidocSignatureSpan">cassowary.</span>ObjectiveVariable
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ObjectiveVariable = function (a){this._init(a,&#x22;o&#x22;)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.Point" id="apidoc.element.cassowary.Point">
+        function <span class="apidocSignatureSpan">cassowary.</span>Point
+        <span class="apidocSignatureSpan">(b, c, d)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Point = function (b, c, d){if(b instanceof a.Variable)this._x=b;else{var e={value:b};d&#x26;&#x26;(e.name=&#x22;x&#x22;+d),this._x=new a.Variable(e)}if(c instanceof
+ a.Variable)this._y=c;else{var f={value:c};d&#x26;&#x26;(f.name=&#x22;y&#x22;+d),this._y=new a.Variable(f)}}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.RequiredFailure" id="apidoc.element.cassowary.RequiredFailure">
+        function <span class="apidocSignatureSpan">cassowary.</span>RequiredFailure
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RequiredFailure = function (){a.Error.apply(this,arguments)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.SimplexSolver" id="apidoc.element.cassowary.SimplexSolver">
+        function <span class="apidocSignatureSpan">cassowary.</span>SimplexSolver
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">SimplexSolver = function (){a.Tableau.call(this),this._stayMinusErrorVars=[],this._stayPlusErrorVars=[],this._errorVars=new a.HashTable,this._markerVars
+=new a.HashTable,this._objective=new a.ObjectiveVariable({name:&#x22;Z&#x22;}),this._editVarMap=new a.HashTable,this._editVarList=[],this.
+_slackCounter=0,this._artificialCounter=0,this._dummyCounter=0,this.autoSolve=!0,this._fNeedsSolving=!1,this._optimizeCount=0,this
+.rows.set(this._objective,new a.Expression),this._stkCedcns=[0],a.trace&#x26;&#x26;a.traceprint(&#x22;objective expr == &#x22;+this.rows.get(this._objective
+))}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+and can be added as a dependency or used under node in the usual way as a
+result. Using Cassowary under node is as simple as:
+
+```js
+// The entire API is exported by the cassowary object
+var c = require(&#x22;cassowary&#x22;);
+
+var solver = new c.<span class="apidocCodeKeywordSpan">SimplexSolver</span>();
+var x = new c.Variable({ value: 167 });
+var y = new c.Variable({ value: 2 });
+var eq = new c.Equation(x, new c.Expression(y));
+solver.addConstraint(eq);
+// ...
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.SlackVariable" id="apidoc.element.cassowary.SlackVariable">
+        function <span class="apidocSignatureSpan">cassowary.</span>SlackVariable
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">SlackVariable = function (a){this._init(a,&#x22;s&#x22;)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.StayConstraint" id="apidoc.element.cassowary.StayConstraint">
+        function <span class="apidocSignatureSpan">cassowary.</span>StayConstraint
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">StayConstraint = function (){c.apply(this,arguments)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.Strength" id="apidoc.element.cassowary.Strength">
+        function <span class="apidocSignatureSpan">cassowary.</span>Strength
+        <span class="apidocSignatureSpan">(b, c, d, e)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Strength = function (b, c, d, e){this.name=b,this.symbolicWeight=c instanceof a.SymbolicWeight?c:new a.SymbolicWeight(c,d,e)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.SymbolicWeight" id="apidoc.element.cassowary.SymbolicWeight">
+        function <span class="apidocSignatureSpan">cassowary.</span>SymbolicWeight
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">SymbolicWeight = function (){this.value=0;for(var a=1,c=arguments.length-1;c&#x3e;=0;--c)this.value+=arguments[c]*a,a*=b}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.Tableau" id="apidoc.element.cassowary.Tableau">
+        function <span class="apidocSignatureSpan">cassowary.</span>Tableau
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Tableau = function (){this.columns=new a.HashTable,this.rows=new a.HashTable,this._infeasibleRows=new a.HashSet,this._externalRows=new a.HashSet
+,this._externalParametricVars=new a.HashSet}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.Timer" id="apidoc.element.cassowary.Timer">
+        function <span class="apidocSignatureSpan">cassowary.</span>Timer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Timer = function (){this.isRunning=!1,this._elapsedMs=0}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.TooDifficult" id="apidoc.element.cassowary.TooDifficult">
+        function <span class="apidocSignatureSpan">cassowary.</span>TooDifficult
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">TooDifficult = function (){a.Error.apply(this,arguments)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.Variable" id="apidoc.element.cassowary.Variable">
+        function <span class="apidocSignatureSpan">cassowary.</span>Variable
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Variable = function (b){this._init(b,&#x22;v&#x22;);var c=a.Variable._map;c&#x26;&#x26;(c[this.name]=this)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+result. Using Cassowary under node is as simple as:
+
+```js
+// The entire API is exported by the cassowary object
+var c = require(&#x22;cassowary&#x22;);
+
+var solver = new c.SimplexSolver();
+var x = new c.<span class="apidocCodeKeywordSpan">Variable</span>({ value: 167 });
+var y = new c.Variable({ value: 2 });
+var eq = new c.Equation(x, new c.Expression(y));
+solver.addConstraint(eq);
+// ...
+```
+
+The current low (sub 0.1) version number reflects the instability of the API.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary._inc" id="apidoc.element.cassowary._inc">
+        function <span class="apidocSignatureSpan">cassowary.</span>_inc
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_inc = function (){return a++}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.approx" id="apidoc.element.cassowary.approx">
+        function <span class="apidocSignatureSpan">cassowary.</span>approx
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">approx = function (a, b){if(a===b)return!0;var c,d;return c=a instanceof h.Variable?a.value:a,d=b instanceof h.Variable?b.value:b,0==c?e&#x3e;Math
+.abs(d):0==d?e&#x3e;Math.abs(c):Math.abs(c-d)&#x3c;Math.abs(c)*e}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.assert" id="apidoc.element.cassowary.assert">
+        function <span class="apidocSignatureSpan">cassowary.</span>assert
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">assert = function (a, b){if(!a)throw new h.InternalError(&#x22;Assertion failed: &#x22;+b)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.divide" id="apidoc.element.cassowary.divide">
+        function <span class="apidocSignatureSpan">cassowary.</span>divide
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">divide = function (a, b){return(&#x22;number&#x22;==typeof a||a instanceof h.Variable)&#x26;&#x26;(a=new h.Expression(a)),(&#x22;number&#x22;==typeof b||b instanceof h.
+Variable)&#x26;&#x26;(b=new h.Expression(b)),a.divide(b)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.extend" id="apidoc.element.cassowary.extend">
+        function <span class="apidocSignatureSpan">cassowary.</span>extend
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (a, b){return this.own(b,function(c){var d=Object.getOwnPropertyDescriptor(b,c);try{&#x22;function&#x22;==typeof d.get||&#x22;function&#x22;==
+typeof d.set?Object.defineProperty(a,c,d):&#x22;function&#x22;==typeof d.value||&#x22;_&#x22;===c.charAt(0)?(d.writable=!0,d.configurable=!0,d.enumerable
+=!1,Object.defineProperty(a,c,d)):a[c]=b[c]}catch(e){}}),a}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.fnenterprint" id="apidoc.element.cassowary.fnenterprint">
+        function <span class="apidocSignatureSpan">cassowary.</span>fnenterprint
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fnenterprint = function (a){console.log(&#x22;* &#x22;+a)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.fnexitprint" id="apidoc.element.cassowary.fnexitprint">
+        function <span class="apidocSignatureSpan">cassowary.</span>fnexitprint
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fnexitprint = function (a){console.log(&#x22;- &#x22;+a)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.inherit" id="apidoc.element.cassowary.inherit">
+        function <span class="apidocSignatureSpan">cassowary.</span>inherit
+        <span class="apidocSignatureSpan">(b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inherit = function (b){var e=null,g=null;b[&#x22;extends&#x22;]&#x26;&#x26;(g=b[&#x22;extends&#x22;],delete b[&#x22;extends&#x22;]),b.initialize&#x26;&#x26;(e=b.initialize,delete b.initialize
+);var h=e||function(){};Object.defineProperty(h,&#x22;__super__&#x22;,{value:g?g:Object,enumerable:!1,configurable:!0,writable:!1}),b._t&#x26;&#x26;(
+f[b._t]=h);var i=h.prototype=Object.create(g?g.prototype:Object.prototype);if(this.extend(i,b),c&#x26;&#x26;g&#x26;&#x26;g.prototype instanceof a.HTMLElement
+){var j=h,k=d(i),l=function(a){return a.__proto__=i,j.apply(a,arguments),i.created&#x26;&#x26;a.created(),i.decorate&#x26;&#x26;a.decorate(),a};this
+.extend(i,{upgrade:l}),h=function(){return l(a.document.createElement(k))},h.prototype=i,this.extend(h,{ctor:j})}return h}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.minus" id="apidoc.element.cassowary.minus">
+        function <span class="apidocSignatureSpan">cassowary.</span>minus
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">minus = function (a, b){return a instanceof h.Expression||(a=new h.Expression(a)),b instanceof h.Expression||(b=new h.Expression(b)),a.minus
+(b)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.own" id="apidoc.element.cassowary.own">
+        function <span class="apidocSignatureSpan">cassowary.</span>own
+        <span class="apidocSignatureSpan">(b, c, d)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">own = function (b, c, d){return Object.getOwnPropertyNames(b).forEach(c,d||a),b}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.parseJSON" id="apidoc.element.cassowary.parseJSON">
+        function <span class="apidocSignatureSpan">cassowary.</span>parseJSON
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseJSON = function (a){return JSON.parse(a,function(a,b){if(&#x22;object&#x22;!=typeof b||&#x22;string&#x22;!=typeof b._t)return b;var c=b._t,d=f[c];if(c&#x26;&#x26;d){
+var e=g(d,&#x22;fromJSON&#x22;);if(e)return e(b,d)}return b})}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.plus" id="apidoc.element.cassowary.plus">
+        function <span class="apidocSignatureSpan">cassowary.</span>plus
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">plus = function (a, b){return a instanceof h.Expression||(a=new h.Expression(a)),b instanceof h.Expression||(b=new h.Expression(b)),a.plus
+(b)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.times" id="apidoc.element.cassowary.times">
+        function <span class="apidocSignatureSpan">cassowary.</span>times
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">times = function (a, b){return(&#x22;number&#x22;==typeof a||a instanceof h.Variable)&#x26;&#x26;(a=new h.Expression(a)),(&#x22;number&#x22;==typeof b||b instanceof h.
+Variable)&#x26;&#x26;(b=new h.Expression(b)),a.times(b)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.cassowary.traceprint" id="apidoc.element.cassowary.traceprint">
+        function <span class="apidocSignatureSpan">cassowary.</span>traceprint
+        <span class="apidocSignatureSpan">(a)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">traceprint = function (a){h.verbose&#x26;&#x26;console.log(a)}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
