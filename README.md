@@ -1,6 +1,6 @@
 # npmdoc-cassowary
 
-#### api documentation for  [cassowary (v0.0.2)](https://github.com/slightlyoff/cassowary-js-refactor#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-cassowary.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-cassowary) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-cassowary.svg)](https://travis-ci.org/npmdoc/node-npmdoc-cassowary)
+#### basic api documentation for  [cassowary (v0.0.2)](https://github.com/slightlyoff/cassowary-js-refactor#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-cassowary.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-cassowary) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-cassowary.svg)](https://travis-ci.org/npmdoc/node-npmdoc-cassowary)
 
 #### A fast, modern JavaScript version of the Cassowary hierarchial linear constraint solver
 
